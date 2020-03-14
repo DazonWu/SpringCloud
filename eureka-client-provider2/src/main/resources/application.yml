@@ -1,0 +1,15 @@
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    service-url: #eureka server 注册中心的地址，用于client和server交流
+      defaultZone: http://localhost:8765/eureka/
+server:
+  port: 8767
+spring:
+  application:
+    name: eureka-client-service-provider
+
+
+
