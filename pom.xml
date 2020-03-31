@@ -45,7 +45,8 @@
         </dependencies>
     </dependencyManagement>
     <modules>
-        <module>eureka-server</module>
+        <module>eureka-server1</module>
+        <module>eureka-server2</module>
         <module>eureka-client-provider1</module>
         <module>eureka-client-provider2</module>
         <module>eureka-client-consumer1</module>

@@ -4,7 +4,7 @@ eureka:
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
   client:
     service-url: #eureka server 注册中心的地址，用于client和server交流
-      defaultZone: http://localhost:8765/eureka/
+      defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
     registry-fetch-interval-seconds: 10
     #是否向server同步注册表
     fetch-registry: true
@@ -14,6 +14,8 @@ eureka:
     #should-enforce-registration-at-init: false
     #disable-delta: false 禁用增量获取
     #registry-refresh-single-vip-address:   指示客户端是否只刷新*单个VIP的注册表信息。
+    #should-enforce-registration-at-init: false #只是客户端是否在初始化时强制注册
+    #on-demand-update-status-change: true #如果设置为true，则通过ApplicationInfoManager触发本地状态更新*按需(但速率有限)注册/更新到远程eureka服务器
 
 server:
   port: 8761

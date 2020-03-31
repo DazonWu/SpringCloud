@@ -15,11 +15,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 //会为项目自动配置必须的配置类，标识该服务为注册中心
 @EnableEurekaServer
-public class EurekaServerApplication{
+public class EurekaApplicationServer1{
 
     public static void main(String[] args){
         //new SpringApplicationBuilder(EurekaServerApplication.class).run()
-        ConfigurableApplicationContext run = SpringApplication.run(EurekaServerApplication.class,args);
+        ConfigurableApplicationContext run = SpringApplication.run(EurekaApplicationServer1.class,args);
     }
 
 }
