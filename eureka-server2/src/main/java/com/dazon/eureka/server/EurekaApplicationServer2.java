@@ -2,6 +2,7 @@ package com.dazon.eureka.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -15,11 +16,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 //会为项目自动配置必须的配置类，标识该服务为注册中心
 @EnableEurekaServer
+@ServletComponentScan
 public class EurekaApplicationServer2{
 
     public static void main(String[] args){
         //new SpringApplicationBuilder(EurekaServerApplication.class).run()
         ConfigurableApplicationContext run = SpringApplication.run(EurekaApplicationServer2.class,args);
     }
+
 
 }
