@@ -14,7 +14,6 @@ import java.util.List;
  * @author Dazon Wu
  * @Description
  * @date 2020/3/6 15:34
- * @email dacheng.wu@baozun.com
  */
 @RestController
 @Slf4j

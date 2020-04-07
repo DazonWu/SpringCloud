@@ -10,7 +10,6 @@ import javax.servlet.Filter;
  * @author Dazon Wu
  * @Description
  * @date 2020/4/2 19:55
- * @email dacheng.wu@baozun.com
  */
 @Configuration
 public class Cfg{

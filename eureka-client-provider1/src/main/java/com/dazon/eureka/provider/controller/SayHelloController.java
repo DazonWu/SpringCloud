@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Dazon Wu
  * @Description
  * @date 2020/3/10 11:23
- * @email dacheng.wu@baozun.com
  */
 @RestController
 @RequestMapping("/eureka/client/provider")

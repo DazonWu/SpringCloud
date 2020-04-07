@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
  * @author Dazon Wu
  * @Description
  * @date 2020/3/10 13:04
- * @email dacheng.wu@baozun.com
  */
 @Configuration
 public class Config{
