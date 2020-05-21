@@ -34,7 +34,7 @@ public class AskHelloController{
         for (int i = 0; i < 100; i++){
             System.out.println(restTemplate.getForEntity("http://eureka-client-service-provider/eureka/client/provider/hello/{name}",String.class,name).getBody());
         }
-        return "";
+        return "aa";
     }
 
     @PostMapping("feignSayHello")
