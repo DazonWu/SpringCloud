@@ -6,6 +6,8 @@ eureka:
     #Eureka服务实例默认注册的InstanceIdshi 他的主机名(既一个主机只有一个服务)
     #这样会导致一个问题，一个主机只能启动一个Eureka服务，所以通过一串随机数标记他自身
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
   client:
     #表明该服务不会像服务注册中心注册自己
     register-with-eureka: false
@@ -13,7 +15,7 @@ eureka:
     fetch-registry: true
     #Eureka Server 注册中西的地址，用于client 和 server交流
     service-url: #Eureka Server 注册中新的地址，用于client 和 server交流
-      defaultZone: http://localhost:8001/eureka,http://localhost:8002/eureka
+      defaultZone: http://localhost:8002/eureka
   #是否启用自我保护
   server:
     enable-self-preservation: false

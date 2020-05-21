@@ -1,6 +1,8 @@
 package com.dazon.eureka.provider.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,11 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/eureka/client/provider")
+@Slf4j
 public class SayHelloController{
 
     @RequestMapping("hello/{name}")
-    public String sayHello(@PathVariable String name){
-        System.out.println("provider 111111");
+    public String sayHello(@RequestHeader(value = "header",required = false) Object header, @PathVariable String name){
+        log.info("header:[{}],provider:[{}]",header,"11");
         return "Hello,".concat(name).concat("!");
     }
 }

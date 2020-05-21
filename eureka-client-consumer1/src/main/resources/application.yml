@@ -1,7 +1,12 @@
 eureka:
   instance:
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+
     hostname: localhost
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    metadata-map:
+      aa: bb
   client:
     service-url: #eureka server 注册中心的地址，用于client和server交流
       defaultZone: http://localhost:8001/eureka/
@@ -23,3 +28,15 @@ spring:
   application:
     name: eureka-client-service-consumer
 
+
+
+# 配置全局的超时时间
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 10000
+
+
+
+
+
+logging.level.com.dazon.eureka.consumer.feign.MyFeignClient: DEBUG
