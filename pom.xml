@@ -50,5 +50,6 @@
         <module>eureka-client-provider1</module>
         <module>eureka-client-provider2</module>
         <module>eureka-client-consumer1</module>
+        <module>gateway</module>
     </modules>
 </project>

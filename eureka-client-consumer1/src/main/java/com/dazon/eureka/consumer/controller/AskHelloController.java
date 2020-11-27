@@ -6,10 +6,7 @@ import com.dazon.eureka.consumer.feign.config.Provider1Interceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -28,6 +25,13 @@ public class AskHelloController{
     private MyFeignClient myFeignClient;
     @Autowired
     private MyFeignClient2 myFeignClient2;
+
+    @GetMapping("hello")
+    public String hello(@RequestParam("param") String param){
+
+        return param;
+    }
+
     @PostMapping("/ask")
     public String sayHello(){
         //从eureka-client-service服务提供者中请求sayHello服务
