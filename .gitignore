@@ -5,3 +5,6 @@
 /.idea/spring-cloud.iml
 /.idea/workspace.xml
 /.idea/compiler.xml
+/gateway/gateway.iml
+/spring-cloud.iml
+/.idea/SpringCloud.iml
