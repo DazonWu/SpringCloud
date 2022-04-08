@@ -33,7 +33,7 @@ spring:
     gateway:
       routes:
       - id: hello
-        uri: order-service:8080/lb://eureka-client-service-consumer
+        uri: lb://eureka-client-service-consumer
         order: 0
         predicates:
         - Path=/gateway12/**

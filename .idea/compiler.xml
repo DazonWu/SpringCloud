@@ -8,10 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-client-consumer1" />
+        <module name="eureka-server2" />
+        <module name="eureka-server1" />
+        <module name="scheduale-demo" />
         <module name="eureka-client-provider1" />
         <module name="eureka-client-provider2" />
         <module name="eureka-server" />
-        <module name="eureka-server1" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -26,6 +29,9 @@
       <module name="eureka-client-provider2" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="eureka-server1" options="-parameters" />
+      <module name="eureka-server2" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="scheduale-demo" options="-parameters" />
     </option>
   </component>
 </project>

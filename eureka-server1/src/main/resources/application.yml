@@ -15,7 +15,7 @@ eureka:
     fetch-registry: true
     #Eureka Server 注册中西的地址，用于client 和 server交流
     service-url: #Eureka Server 注册中新的地址，用于client 和 server交流
-      defaultZone: http://localhost:8002/eureka
+#      defaultZone: http://localhost:8002/eureka
   #是否启用自我保护
   server:
     enable-self-preservation: false
