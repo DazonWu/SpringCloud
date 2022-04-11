@@ -22,31 +22,17 @@ public class ScheduleConfiguration implements SchedulingConfigurer {
 
     @Override
     public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
-        TriggerTask triggerTask = null;
-        Task task = new Task(triggerTask,scheduledTaskRegistrar);
-        triggerTask = new TriggerTask(task, new MyTrigger());
+        TriggerTask triggerTask = new TriggerTask(()-> {
+            Date date = new Date();
+            System.out.println(date);
+            System.out.println("hello world!"+ date);
+        }, new MyTrigger());
 
         scheduledTaskRegistrar.addTriggerTask(triggerTask);
 
     }
 
-    public static class Task implements Runnable{
 
-        private TriggerTask triggerTask;
-
-        private ScheduledTaskRegistrar scheduledTaskRegistrar;
-
-        public Task(TriggerTask triggerTask,ScheduledTaskRegistrar scheduledTaskRegistrar){
-            this.triggerTask = triggerTask;
-            this.scheduledTaskRegistrar = scheduledTaskRegistrar;
-        }
-
-        @Override
-        public void run() {
-            System.out.println("hello world!");
-            //scheduledTaskRegistrar.lisgetTriggerTaskList().remove(triggerTask);
-        }
-    }
 
     public static class MyTrigger implements Trigger{
 
@@ -57,7 +43,7 @@ public class ScheduleConfiguration implements SchedulingConfigurer {
             System.out.println("lastCompletionTime:        " + triggerContext.lastCompletionTime());
             try {
                 if(triggerContext.lastCompletionTime()==null&&triggerContext.lastScheduledExecutionTime()==null&&triggerContext.lastActualExecutionTime()==null){
-                    return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2022-04-08 18:4:00");
+                    return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2022-04-08 23:41:24");
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
