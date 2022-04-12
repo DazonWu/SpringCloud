@@ -1,4 +1,4 @@
-/.idea/compiler.xml
+/.idea
 /.idea/encodings.xml
 /.idea/misc.xml
 /.idea/modules.xml
@@ -8,3 +8,4 @@
 /gateway/gateway.iml
 /spring-cloud.iml
 /.idea/SpringCloud.iml
+/scheduale-demo/target
